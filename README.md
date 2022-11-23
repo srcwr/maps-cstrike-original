@@ -2,6 +2,8 @@
 
 Collected mainly through scraping "FastDL" webhosts.
 
+`unprocessed/*.csv` files were generated with https://github.com/srcwr/maps-hasher
+
 ## Usage in SQLite
 TODO: Table keys so hash comparisons is faster...
 ```bash
