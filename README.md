@@ -12,6 +12,6 @@ CREATE TABLE maps (mapname TEXT NOT NULL, filesize INT NOT NULL, crc32ieee TEXT 
 .mode csv
 .import processed/lowercase.csv maps
 CREATE TABLE compressed (filesize INT NOT NULL, sha3_512 TEXT NOT NULL);
-.import processed/mixedcase.csv compressed
+.import processed/compressed_filesizes.csv compressed
 .exit
 ```
