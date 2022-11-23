@@ -10,6 +10,8 @@ TODO: Table keys so hash comparisons is faster...
 $ sqlite3 new.db
 CREATE TABLE maps (mapname TEXT NOT NULL, filesize INT NOT NULL, crc32ieee TEXT NOT NULL, md5 TEXT NOT NULL, sha1 TEXT NOT NULL, sha2_256 TEXT NOT NULL, sha2_512 TEXT NOT NULL, sha3_512 TEXT NOT NULL);
 .mode csv
-.import processed_lower.csv maps
+.import processed/lowercase.csv maps
+CREATE TABLE compressed (filesize INT NOT NULL, sha3_512 TEXT NOT NULL);
+.import processed/mixedcase.csv compressed
 .exit
 ```
