@@ -7,9 +7,11 @@ tail -n +2 --quiet unprocessed/*.csv \
 	| tr '[:upper:]' '[:lower:]' \
 	| sort \
 	| uniq \
+	| comm -3 - other/filtered_for_likely_trolls.csv \
 	> processed_lower.csv
 
 tail -n +2 --quiet unprocessed/*.csv \
 	| sort \
 	| uniq \
+	| comm -3 - other/filtered_for_likely_trolls.csv \
 	> processed_mixed.csv
