@@ -5,15 +5,17 @@
 
 tail -n +2 --quiet unprocessed/*.csv \
 	| tr '[:upper:]' '[:lower:]' \
-	| sort \
-	| uniq \
-	| comm -3 - other/filtered_for_likely_trolls.csv \
+	| sort | uniq \
+	| comm -23 - other/filtered_for_csgo.csv | sort \
+	| comm -23 - other/filtered_for_likely_trolls.csv | sort \
+	| comm -23 - other/filtered_for_not_bsp.csv | sort \
 	> processed/lowercase.csv
 
 tail -n +2 --quiet unprocessed/*.csv \
-	| sort \
-	| uniq \
-	| comm -3 - other/filtered_for_likely_trolls.csv \
+	| sort | uniq \
+	| comm -23 - other/filtered_for_csgo.csv | sort \
+	| comm -23 - other/filtered_for_likely_trolls.csv | sort \
+	| comm -23 - other/filtered_for_not_bsp.csv | sort \
 	> processed/mixedcase.csv
 
 if [ -d "../hashed" ]; then
